@@ -13,19 +13,14 @@
     display: flex; flex-direction: column;
     background: #fff; border-right: 1px solid #e8e4dc;
     overflow: hidden; flex-shrink: 0;
-    box-shadow: 2px 0 12px rgba(0,0,0,0.07);
-    z-index: 2;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.07); z-index: 2;
   }
   #sidebar-header { padding: 18px 18px 14px; border-bottom: 1px solid #eeebe4; }
   #sidebar-header h1 { font-size: 17px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.01em; }
   #sidebar-header p { font-size: 11px; color: #999; margin-top: 3px; letter-spacing: 0.04em; text-transform: uppercase; }
 
   #day-tabs { display: flex; border-bottom: 1px solid #eeebe4; background: #faf9f7; }
-  .day-tab {
-    flex: 1; padding: 10px 4px; text-align: center; font-size: 11px; font-weight: 600;
-    cursor: pointer; color: #aaa; letter-spacing: 0.04em; text-transform: uppercase;
-    border-bottom: 2px solid transparent; transition: all 0.18s;
-  }
+  .day-tab { flex: 1; padding: 10px 4px; text-align: center; font-size: 11px; font-weight: 600; cursor: pointer; color: #aaa; letter-spacing: 0.04em; text-transform: uppercase; border-bottom: 2px solid transparent; transition: all 0.18s; }
   .day-tab:hover { color: #555; }
   .day-tab.active { color: #1a1a1a; border-bottom-color: #b07d3a; }
 
@@ -33,19 +28,11 @@
   #stop-list::-webkit-scrollbar { width: 3px; }
   #stop-list::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
 
-  .stop-item {
-    display: flex; align-items: flex-start; gap: 11px;
-    padding: 10px 15px; cursor: pointer; transition: background 0.12s;
-    border-left: 3px solid transparent;
-  }
+  .stop-item { display: flex; align-items: flex-start; gap: 11px; padding: 10px 15px; cursor: pointer; transition: background 0.12s; border-left: 3px solid transparent; }
   .stop-item:hover { background: #faf8f5; }
   .stop-item.active { background: #fdf8f0; border-left-color: #b07d3a; }
 
-  .stop-num {
-    width: 22px; height: 22px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
-  }
+  .stop-num { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
   .stop-info { flex: 1; min-width: 0; }
   .stop-time { font-size: 10px; color: #aaa; letter-spacing: 0.05em; text-transform: uppercase; }
   .stop-name { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-top: 1px; line-height: 1.3; }
@@ -56,22 +43,16 @@
   .note-item { display: flex; margin-bottom: 5px; line-height: 1.45; color: #555; align-items: flex-start; gap: 6px; }
   .note-dot { width: 14px; height: 14px; background: #fdf0e0; color: #b07d3a; border-radius: 50%; font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
 
-  #map-container { flex: 1; position: relative; }
-  #map { width: 100%; height: 100%; }
+  #map { flex: 1; position: relative; z-index: 1; }
 
   #detail-panel {
     position: absolute; bottom: 0; left: 0; right: 0;
     background: rgba(255,255,255,0.96); backdrop-filter: blur(10px);
     border-top: 1px solid #e8e4dc; padding: 16px 20px 18px;
-    display: none; z-index: 1000;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    display: none; z-index: 1000; box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
   }
   #detail-panel.visible { display: block; }
-  #detail-close {
-    position: absolute; top: 12px; right: 14px; background: #f0ede8;
-    border: none; color: #888; cursor: pointer; font-size: 15px; width: 26px; height: 26px;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  }
+  #detail-close { position: absolute; top: 12px; right: 14px; background: #f0ede8; border: none; color: #888; cursor: pointer; font-size: 15px; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
   #detail-close:hover { background: #e8e4dc; color: #333; }
   #detail-time { font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; }
   #detail-name { font-size: 17px; font-weight: 700; color: #1a1a1a; margin: 3px 0 4px; }
@@ -108,12 +89,11 @@
     <div class="note-item"><div class="note-dot">!</div>GOCAT closes 2 PM Sundays — don't linger after 11</div>
     <div class="note-item"><div class="note-dot">!</div>Arka Rooftop closes 11 PM on Fridays</div>
     <div class="note-item"><div class="note-dot">!</div>Opera box office: +355 69 870 3233, cash only, 10 AM</div>
-    <div class="note-item"><div class="note-dot">!</div>Bunk'Art 1 closed Tuesdays — you're going Saturday ✓</div>
+    <div class="note-item"><div class="note-dot">!</div>Bunk'Art 1 closed Tuesdays — Saturday visit is fine ✓</div>
   </div>
 </div>
 
-<div id="map-container">
-  <div id="map"></div>
+<div id="map">
   <div id="detail-panel">
     <button id="detail-close" onclick="closeDetail()">×</button>
     <div id="detail-time"></div>
@@ -132,10 +112,10 @@ const stops = [
   { day:1, time:"1:00 PM", name:"Green & Protein Bllok", cat:"food", catLabel:"Lunch", lat:41.3200007, lng:19.8181049, desc:"Fresh bowls, salads, wraps, and juices. The Power Beef Burger is highly praised. Aim for 1 PM sharp — gets packed quickly after.", rating:"4.5 ★  (615 reviews)", hours:"Opens 10 AM · open late" },
   { day:1, time:"2:30 PM", name:"BUNK'ART 1", cat:"culture", catLabel:"Museum", lat:41.3497926, lng:19.8604595, desc:"A massive Soviet-era nuclear bunker built into the mountain. Cold War history, immersive exhibitions. Budget 2+ hours.", rating:"4.6 ★  (4,117 reviews)", hours:"Opens 9:30 AM · Closed Tuesdays" },
   { day:1, time:"6:00 PM", name:"Tirana Lake Park", cat:"nature", catLabel:"Park", lat:41.3118524, lng:19.8253206, desc:"Beautiful artificial lake park — perfect for a sunset wind-down walk before dinner. Cafés, joggers, friendly stray dogs.", rating:"4.7 ★  (5,490 reviews)", hours:"Open 24 hours" },
-  { day:1, time:"8:00 PM", name:"Noma Tirana", cat:"drinks", catLabel:"Dinner & Bar", lat:41.3191573, lng:19.8100803, desc:"Cozy upscale neighbourhood bar-bistro near Blloku. Best Bloody Marys and cocktails in town. Great food, beautiful lighting. Then explore Blloku.", rating:"4.9 ★  (130 reviews)", hours:"Opens 7:30 AM · closes midnight" },
-  { day:2, time:"9:00 AM", name:"Frutz'a Blloku", cat:"coffee", catLabel:"Brunch", lat:41.3218861, lng:19.812394, desc:"Avocado toast with turkey and eggs, fresh juices, specialty coffee. Non-smoking indoors, one of the highest-rated spots in Blloku.", rating:"4.9 ★  (134 reviews)", hours:"Opens 7 AM" },
+  { day:1, time:"8:00 PM", name:"Noma Tirana", cat:"drinks", catLabel:"Dinner & Bar", lat:41.3191573, lng:19.8100803, desc:"Cozy upscale bar-bistro near Blloku. Best Bloody Marys and cocktails in town. Great food, beautiful lighting. Then explore Blloku.", rating:"4.9 ★  (130 reviews)", hours:"Opens 7:30 AM · closes midnight" },
+  { day:2, time:"9:00 AM", name:"Frutz'a Blloku", cat:"coffee", catLabel:"Brunch", lat:41.3218861, lng:19.812394, desc:"Avocado toast with turkey and eggs, fresh juices, specialty coffee. One of the highest-rated spots in Blloku.", rating:"4.9 ★  (134 reviews)", hours:"Opens 7 AM" },
   { day:2, time:"10:30 AM", name:"Pyramid of Tirana", cat:"culture", catLabel:"Landmark", lat:41.3230699, lng:19.8214613, desc:"Climb the graffiti-covered pyramid built to honour Hoxha — now a creative hub. Free entry. ~100 steps for 360° views. Then head inside to GOCAT.", rating:"4.2 ★  (8,403 reviews)", hours:"Open 24 hours · Free" },
-  { day:2, time:"11:00 AM", name:"GOCAT Gallery", cat:"culture", catLabel:"Gallery", lat:41.322736, lng:19.8216121, desc:"Gallery of Contemporary Art inside the Pyramid. Thought-provoking exhibitions with an Albanian history angle. Friendly, knowledgeable staff.", rating:"4.6 ★  (48 reviews)", hours:"Sun 10 AM–2 PM", warning:"⚠ Closes 2 PM on Sundays — don't linger after 11 AM" },
+  { day:2, time:"11:00 AM", name:"GOCAT Gallery", cat:"culture", catLabel:"Gallery", lat:41.322736, lng:19.8216121, desc:"Gallery of Contemporary Art inside the Pyramid. Thought-provoking exhibitions with an Albanian history angle.", rating:"4.6 ★  (48 reviews)", hours:"Sun 10 AM–2 PM", warning:"⚠ Closes 2 PM on Sundays — don't linger after 11 AM" },
   { day:2, time:"1:00 PM", name:"Bloom The Matcha", cat:"coffee", catLabel:"Matcha Bar", lat:41.3182033, lng:19.8175321, desc:"Tirana's dedicated matcha café with a cute lilac interior. Sea salt matcha and Vanilla Seasalt Matcha Latte are the standout orders.", rating:"4.8 ★  (33 reviews)", hours:"Opens 8:30 AM Sun" },
   { day:2, time:"5:00 PM", name:"Vila 31 x Art Explora", cat:"culture", catLabel:"Exhibition", lat:41.3208997, lng:19.8173471, desc:"Enver Hoxha's former villa, now an artist residency. Free exhibition on former political prisoners. Rare public access this weekend only.", rating:"4.3 ★", hours:"Open 2–6 PM this weekend only", warning:"⚠ Open Studios Apr 9–13 only — perfectly timed" },
 ];
@@ -144,7 +124,11 @@ const pinColors = { food:'#3a8a3a', coffee:'#3a65a8', culture:'#7a3aaa', nature:
 const dayColors = ['num-fri','num-sat','num-sun'];
 const catColors = { food:'cat-food', coffee:'cat-coffee', culture:'cat-culture', nature:'cat-nature', drinks:'cat-drinks' };
 
-let currentDay = 0, map, gmarkers = [], openInfo = null;
+let currentDay = 0;
+let map = null;
+// Store ALL markers for all stops (indexed by stop index), shown/hidden per day
+let allMarkers = [];
+let openInfo = null;
 
 window.initMap = function() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -161,50 +145,59 @@ window.initMap = function() {
       { featureType:'road', elementType:'geometry', stylers:[{ color:'#ffffff' }] },
       { featureType:'road.arterial', elementType:'geometry', stylers:[{ color:'#eeebe4' }] },
       { featureType:'road.highway', elementType:'geometry', stylers:[{ color:'#e4e0d8' }] },
-      { featureType:'road', elementType:'labels.text.fill', stylers:[{ color:'#999' }] },
+      { featureType:'road', elementType:'labels.text.fill', stylers:[{ color:'#aaa' }] },
       { featureType:'water', elementType:'geometry', stylers:[{ color:'#cde8f4' }] },
       { featureType:'landscape.natural', elementType:'geometry', stylers:[{ color:'#e8f2e8' }] },
       { featureType:'landscape.man_made', elementType:'geometry', stylers:[{ color:'#f0ede8' }] },
       { featureType:'administrative', elementType:'labels.text.fill', stylers:[{ color:'#aaa' }] },
     ]
   });
-  buildMarkers();
+
+  // Create ALL markers upfront, show only current day's
+  stops.forEach((s, idx) => {
+    const dayStops = stops.filter(st => st.day === s.day);
+    const num = dayStops.indexOf(s) + 1;
+    const icon = makeIcon(pinColors[s.cat], num);
+
+    const marker = new google.maps.Marker({
+      position: { lat: s.lat, lng: s.lng },
+      map: map,
+      icon: icon,
+      title: s.name,
+      visible: s.day === currentDay
+    });
+
+    const iw = new google.maps.InfoWindow({
+      content: `<div style="font-family:Segoe UI,system-ui,sans-serif;padding:2px 4px">
+        <div style="font-weight:700;font-size:13px;color:#1a1a1a">${s.name}</div>
+        <div style="font-size:11px;color:#999;margin-top:2px">${s.time}</div>
+      </div>`
+    });
+
+    marker.addListener('click', () => {
+      if (openInfo) openInfo.close();
+      iw.open(map, marker);
+      openInfo = iw;
+      selectStop(idx, false);
+    });
+
+    allMarkers.push({ marker, iw });
+  });
+
   fitDay();
 };
 
-function makePinSvg(color, label) {
+function makeIcon(color, label) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="38" viewBox="0 0 30 38">
     <path d="M15 0C6.716 0 0 6.716 0 15c0 9.5 15 23 15 23S30 24.5 30 15C30 6.716 23.284 0 15 0z" fill="${color}"/>
     <circle cx="15" cy="15" r="9" fill="white" opacity="0.92"/>
     <text x="15" y="19.5" text-anchor="middle" font-size="10" font-weight="700" fill="${color}" font-family="Segoe UI,system-ui,sans-serif">${label}</text>
   </svg>`;
-  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-}
-
-function buildMarkers() {
-  gmarkers.forEach(m => m.setMap(null));
-  gmarkers = [];
-  if (openInfo) { openInfo.close(); openInfo = null; }
-  const dayStops = stops.filter(s => s.day === currentDay);
-  dayStops.forEach((s, i) => {
-    const gi = stops.indexOf(s);
-    const icon = {
-      url: makePinSvg(pinColors[s.cat], i + 1),
-      scaledSize: new google.maps.Size(30, 38),
-      anchor: new google.maps.Point(15, 38)
-    };
-    const m = new google.maps.Marker({ position: { lat: s.lat, lng: s.lng }, map, icon, title: s.name });
-    const iw = new google.maps.InfoWindow({
-      content: `<div style="font-family:Segoe UI,system-ui,sans-serif;padding:2px 4px"><div style="font-weight:700;font-size:13px;color:#1a1a1a">${s.name}</div><div style="font-size:11px;color:#999;margin-top:2px">${s.time}</div></div>`
-    });
-    m.addListener('click', () => {
-      if (openInfo) openInfo.close();
-      iw.open(map, m);
-      openInfo = iw;
-      selectStop(gi, false);
-    });
-    gmarkers.push({ marker: m, infoWin: iw });
-  });
+  return {
+    url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg),
+    scaledSize: new google.maps.Size(30, 38),
+    anchor: new google.maps.Point(15, 38)
+  };
 }
 
 function fitDay() {
@@ -214,6 +207,14 @@ function fitDay() {
   const bounds = new google.maps.LatLngBounds();
   dayStops.forEach(s => bounds.extend({ lat: s.lat, lng: s.lng }));
   map.fitBounds(bounds, { top: 40, bottom: 60, left: 20, right: 20 });
+}
+
+function showDayMarkers() {
+  if (!map) return;
+  if (openInfo) { openInfo.close(); openInfo = null; }
+  stops.forEach((s, idx) => {
+    allMarkers[idx].marker.setVisible(s.day === currentDay);
+  });
 }
 
 function renderStops() {
@@ -236,28 +237,26 @@ function setDay(d) {
   currentDay = d;
   document.querySelectorAll('.day-tab').forEach((t, i) => t.classList.toggle('active', i === d));
   renderStops();
-  buildMarkers();
+  showDayMarkers();
   fitDay();
   closeDetail();
 }
 
-function selectStop(idx, panMap) {
+function selectStop(idx, panToMarker) {
   document.querySelectorAll('.stop-item').forEach(el => el.classList.remove('active'));
   const el = document.getElementById('item-' + idx);
   if (el) { el.classList.add('active'); el.scrollIntoView({ behavior:'smooth', block:'nearest' }); }
-  const s = stops[idx];
-  if (panMap && map) {
+
+  if (map && panToMarker) {
+    const s = stops[idx];
     map.panTo({ lat: s.lat, lng: s.lng });
     map.setZoom(16);
-    const dayStops = stops.filter(st => st.day === currentDay);
-    const di = dayStops.indexOf(s);
-    if (di >= 0 && gmarkers[di]) {
-      if (openInfo) openInfo.close();
-      gmarkers[di].infoWin.open(map, gmarkers[di].marker);
-      openInfo = gmarkers[di].infoWin;
-    }
+    if (openInfo) openInfo.close();
+    allMarkers[idx].iw.open(map, allMarkers[idx].marker);
+    openInfo = allMarkers[idx].iw;
   }
-  showDetail(s);
+
+  showDetail(stops[idx]);
 }
 
 function showDetail(s) {
@@ -276,6 +275,6 @@ function closeDetail() {
 
 renderStops();
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzgvw3kfS3t_Pgvl520u4VbIrwSabO4eI&callback=initMap&libraries=maps,marker" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzgvw3kfS3t_Pgvl520u4VbIrwSabO4eI&callback=initMap" async defer></script>
 </body>
 </html>
