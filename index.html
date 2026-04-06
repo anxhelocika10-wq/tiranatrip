@@ -275,6 +275,11 @@ function closeDetail() {
 
 renderStops();
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzgvw3kfS3t_Pgvl520u4VbIrwSabO4eI&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzgvw3kfS3t_Pgvl520u4VbIrwSabO4eI"></script>
+<script>
+  window.addEventListener('load', () => {
+    initMap();
+  });
+</script>
 </body>
 </html>
